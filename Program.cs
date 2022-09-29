@@ -11,11 +11,11 @@
             Console.WriteLine("Please enter a word to determine whether it is a palindrome: ");
             input = Console.ReadLine();
 
-            while (input.Length > 5)
-            {
-                Console.WriteLine("The word must be no more than 5 letters. Try again: ");
-                input = Console.ReadLine();
-            }
+            //while (input.Length > 5)
+            //{
+            //    Console.WriteLine("The word must be no more than 5 letters. Try again: ");
+            //    input = Console.ReadLine();
+            //}
 
             index = input.Length - 1;
 
