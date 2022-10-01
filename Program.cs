@@ -17,6 +17,7 @@
                 input = Console.ReadLine();
             }
 
+            // Update index following user input
             index = input.Length - 1;
 
             while (index >= 0)
