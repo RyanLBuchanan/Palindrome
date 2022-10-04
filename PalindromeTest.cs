@@ -17,11 +17,11 @@ namespace Palindrome
 
             while (inputWord != "-1")
             {
-                Console.WriteLine("Please enter a word to test palindromicity (enter -1 to quit): ");
+                Console.WriteLine("Please enter a term to test palindromicity (enter -1 to quit): ");
 
-                inputWord = StripPunctuation(Console.ReadLine());
+                inputWord = Console.ReadLine();
 
-                char[] wordToTest = inputWord.ToLower().Replace(" ", "").ToCharArray();
+                char[] wordToTest = StripPunctuation(inputWord).ToLower().Replace(" ", "").ToCharArray();
                 
 
                 if (inputWord == "-1")
@@ -31,11 +31,11 @@ namespace Palindrome
 
                 if (isPalindrome(wordToTest) == 1)
                 {
-                    Console.WriteLine($"The word {inputWord} is a palindrome.");
+                    Console.WriteLine($"The term {StripPunctuation(inputWord)} is a palindrome.");
                 }
                 else
                 {
-                    Console.WriteLine($"The word {inputWord} is NOT a palindrome.");
+                    Console.WriteLine($"The term {StripPunctuation(inputWord)} is NOT a palindrome.");
                 }
                 Console.WriteLine();
             }
