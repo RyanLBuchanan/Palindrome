@@ -1,6 +1,8 @@
-﻿namespace Palindrome
+﻿using System.Text;
+
+namespace Palindrome
 {
-    internal class PalindromeTest
+    public class PalindromeTest
     {
         public static void Main(String[] args)
         {
@@ -17,9 +19,11 @@
             {
                 Console.WriteLine("Please enter a word to test palindromicity (enter -1 to quit): ");
 
-                inputWord = Console.ReadLine();
+                inputWord = StripPunctuation(Console.ReadLine());
 
                 char[] wordToTest = inputWord.ToLower().Replace(" ", "").ToCharArray();
+                
+
                 if (inputWord == "-1")
                 {
                     return;
@@ -34,6 +38,17 @@
                     Console.WriteLine($"The word {inputWord} is NOT a palindrome.");
                 }
                 Console.WriteLine();
+            }
+
+            string StripPunctuation(string s)
+            {
+                var sb = new StringBuilder();
+                foreach (char c in s)
+                {
+                    if (!char.IsPunctuation(c))
+                        sb.Append(c);
+                }
+                return sb.ToString();
             }
 
             // Push function
